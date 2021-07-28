@@ -1,0 +1,24 @@
+{
+  "name": "quickstart-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "build": "node scripts/build.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashvajs/quickstart-nodejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashvajs/quickstart-nodejs/issues"
+  },
+  "homepage": "https://github.com/ashvajs/quickstart-nodejs#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
