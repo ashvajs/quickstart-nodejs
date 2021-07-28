@@ -19,6 +19,5 @@ phases:
 
 artifacts:
   files:
-    - '**/*'
-  discard-paths: yes
-  base-directory: dist/quickstart-nodejs
+    - '*.zip'
+  base-directory: dist

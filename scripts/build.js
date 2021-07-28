@@ -47,6 +47,9 @@ function copyFolderRecursiveSync(source, target, ignore = ['node_modules', 'cove
 }
 
 function copyServer() {
+  if (!fs.existsSync(`${resolveApp('dist')}`)) {
+    fs.mkdirSync(`${resolveApp('dist')}`);
+  }
   if (!fs.existsSync(`${resolveApp('dist')}/${packageJson.name}`)) {
     fs.mkdirSync(`${resolveApp('dist')}/${packageJson.name}`);
   }
@@ -73,11 +76,11 @@ function zipBuild(filename) {
   archive.pipe(output);
 
   // append files from a sub-directory, putting its contents at the root of archive
-  archive.directory(resolveApp('dist'), false);
+  archive.directory(`${resolveApp('dist')}/${packageJson.name}`, false);
 
   archive.finalize();
 }
 
 copyServer();
-
+zipBuild(`dist/${packageJson.name}.zip`);
 console.log('build done');
