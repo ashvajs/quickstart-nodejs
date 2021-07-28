@@ -11,7 +11,7 @@ phases:
   build:
     commands:
       - echo build phase
-      - npm dist
+      - npm build
 
   post_build:
     commands:
