@@ -50,6 +50,7 @@ function copyServer() {
   if (!fs.existsSync(`${resolveApp('dist')}`)) {
     fs.mkdirSync(`${resolveApp('dist')}`);
   }
+  console.log(resolveApp('dist'));
   if (!fs.existsSync(`${resolveApp('dist')}/${packageJson.name}`)) {
     fs.mkdirSync(`${resolveApp('dist')}/${packageJson.name}`);
   }
