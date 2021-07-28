@@ -83,5 +83,5 @@ function zipBuild(filename) {
 }
 
 copyServer();
-zipBuild(`dist/${packageJson.name}.zip`);
+// zipBuild(`dist/${packageJson.name}.zip`);
 console.log('build done');
