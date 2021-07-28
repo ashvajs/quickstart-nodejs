@@ -47,14 +47,14 @@ function copyFolderRecursiveSync(source, target, ignore = ['node_modules', 'cove
 }
 
 function copyServer() {
-  if (!fs.existsSync(resolveApp('dist'))) {
-    fs.mkdirSync(resolveApp('dist'));
+  if (!fs.existsSync(`${resolveApp('dist')}/${packageJson.name}`)) {
+    fs.mkdirSync(`${resolveApp('dist')}/${packageJson.name}`);
   }
 
-  fs.copyFileSync(resolveApp('./') + '/package.json', resolveApp('dist') + `/package.json`);
+  fs.copyFileSync(resolveApp('./') + '/package.json', `${resolveApp('dist')}/${packageJson.name}/package.json`);
 
-  copyFolderRecursiveSync(resolveApp('src'), resolveApp('dist'));
-  copyFolderRecursiveSync(resolveApp('public'), resolveApp('dist'));
+  copyFolderRecursiveSync(resolveApp('src'), `${resolveApp('dist')}/${packageJson.name}`);
+  copyFolderRecursiveSync(resolveApp('public'), `${resolveApp('dist')}/${packageJson.name}`);
 }
 
 function zipBuild(filename) {

@@ -16,4 +16,8 @@ phases:
   post_build:
     commands:
       - echo post build phase
-  
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: dist/quickstart-nodejs
